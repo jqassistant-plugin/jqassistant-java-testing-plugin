@@ -34,11 +34,11 @@ class MockitoIT extends AbstractJavaPluginIT {
 
         assertThat(conceptResult.getRows().size()).isEqualTo(1);
         assertThat(conceptResult.getRows()
-            .get(0)
-            .getColumns()
-            .get("assertMethod")
-            .getValue()).asInstanceOf(type(MethodDescriptor.class))
-            .is(methodDescriptor(Mockito.class, "verify", Object.class));
+                .get(0)
+                .getColumns()
+                .get("assertMethod")
+                .getValue()).asInstanceOf(type(MethodDescriptor.class))
+                .is(methodDescriptor(Mockito.class, "verify", Object.class));
 
         final TestResult methodQueryResultForMockito = getMethodQueryResultForMockito();
         assertThat(methodQueryResultForMockito.getRows().size()).isEqualTo(1);
@@ -58,11 +58,11 @@ class MockitoIT extends AbstractJavaPluginIT {
 
         assertThat(conceptResult.getRows().size()).isEqualTo(1);
         assertThat(conceptResult.getRows()
-            .get(0)
-            .getColumns()
-            .get("assertMethod")
-            .getValue()).asInstanceOf(type(MethodDescriptor.class))
-            .is(methodDescriptor(BDDMockito.Then.class, "shouldHaveNoInteractions"));
+                .get(0)
+                .getColumns()
+                .get("assertMethod")
+                .getValue()).asInstanceOf(type(MethodDescriptor.class))
+                .is(methodDescriptor(BDDMockito.Then.class, "shouldHaveNoInteractions"));
 
         final TestResult methodQueryResultForMockito = getMethodQueryResultForMockito();
         assertThat(methodQueryResultForMockito.getRows().size()).isEqualTo(1);
@@ -81,11 +81,11 @@ class MockitoIT extends AbstractJavaPluginIT {
         store.beginTransaction();
 
         final List<TypeDescriptor> declaringTypes = conceptResult.getRows().stream()
-            .map(Row::getColumns)
-            .map(columns -> columns.get("DeclaringType"))
-            .map(Column::getValue)
-            .map(TypeDescriptor.class::cast)
-            .collect(Collectors.toList());
+                .map(Row::getColumns)
+                .map(columns -> columns.get("DeclaringType"))
+                .map(Column::getValue)
+                .map(TypeDescriptor.class::cast)
+                .collect(Collectors.toList());
         assertThat(declaringTypes).haveExactly(1, typeDescriptor(Mockito.class));
 
         final TestResult methodQueryResultForMockito = getMethodQueryResultForMockito();
@@ -97,23 +97,23 @@ class MockitoIT extends AbstractJavaPluginIT {
 
     private TestResult getMethodQueryResultForMockito() {
         return query(
-            "MATCH (testMethod:Method)-[:INVOKES]->(assertMethod:Method) "
-                + "WHERE assertMethod:Mockito:Assert "
-                + "RETURN testMethod, assertMethod");
+                "MATCH (testMethod:Method)-[:INVOKES]->(assertMethod:Method) "
+                        + "WHERE assertMethod:Mockito:Assert "
+                        + "RETURN testMethod, assertMethod");
     }
 
     private void verifyMockitoVerifyExampleContained(TestResult methodQueryResult) throws NoSuchMethodException {
         assertThat(methodQueryResult.<MethodDescriptor>getColumn("testMethod"))
-            .haveExactly(1, methodDescriptor(AssertExample.class, "mockitoVerifyExampleMethod"));
+                .haveExactly(1, methodDescriptor(AssertExample.class, "mockitoVerifyExampleMethod"));
         assertThat(methodQueryResult.<MethodDescriptor>getColumn("assertMethod"))
-            .haveExactly(1, methodDescriptor(Mockito.class, "verify", Object.class));
+                .haveExactly(1, methodDescriptor(Mockito.class, "verify", Object.class));
     }
 
     private void verifyBddMockitoThenShouldExampleContained(TestResult methodQueryResult) throws NoSuchMethodException {
         assertThat(methodQueryResult.<MethodDescriptor>getColumn("testMethod"))
-            .haveExactly(1, methodDescriptor(AssertExample.class, "bddMockitoThenShouldExampleMethod"));
+                .haveExactly(1, methodDescriptor(AssertExample.class, "bddMockitoThenShouldExampleMethod"));
         assertThat(methodQueryResult.<MethodDescriptor>getColumn("assertMethod"))
-            .haveExactly(1, methodDescriptor(BDDMockito.Then.class, "shouldHaveNoInteractions"));
+                .haveExactly(1, methodDescriptor(BDDMockito.Then.class, "shouldHaveNoInteractions"));
     }
 
 }

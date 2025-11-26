@@ -33,11 +33,11 @@ class AssertJIT extends AbstractJavaPluginIT {
 
         assertThat(conceptResult.getRows().size()).isEqualTo(1);
         assertThat(conceptResult.getRows()
-            .get(0)
-            .getColumns()
-            .get("assertMethod")
-            .getValue()).asInstanceOf(type(MethodDescriptor.class))
-            .is(methodDescriptor(Assertions.class, "assertThat", boolean.class));
+                .get(0)
+                .getColumns()
+                .get("assertMethod")
+                .getValue()).asInstanceOf(type(MethodDescriptor.class))
+                .is(methodDescriptor(Assertions.class, "assertThat", boolean.class));
 
         verifyResultGraph();
 
@@ -54,11 +54,11 @@ class AssertJIT extends AbstractJavaPluginIT {
         store.beginTransaction();
 
         final List<TypeDescriptor> declaringTypes = conceptResult.getRows().stream()
-            .map(Row::getColumns)
-            .map(columns -> columns.get("DeclaringType"))
-            .map(Column::getValue)
-            .map(TypeDescriptor.class::cast)
-            .collect(Collectors.toList());
+                .map(Row::getColumns)
+                .map(columns -> columns.get("DeclaringType"))
+                .map(Column::getValue)
+                .map(TypeDescriptor.class::cast)
+                .collect(Collectors.toList());
         assertThat(declaringTypes).haveExactly(1, typeDescriptor(Assertions.class));
 
         verifyResultGraph();
@@ -69,13 +69,13 @@ class AssertJIT extends AbstractJavaPluginIT {
     // Expects an open transaction
     private void verifyResultGraph() throws NoSuchMethodException {
         final TestResult methodQueryResult = query(
-            "MATCH (testMethod:Method)-[:INVOKES]->(assertMethod:Method) "
-                + "WHERE assertMethod:AssertJ:Assert "
-                + "RETURN testMethod, assertMethod");
+                "MATCH (testMethod:Method)-[:INVOKES]->(assertMethod:Method) "
+                        + "WHERE assertMethod:AssertJ:Assert "
+                        + "RETURN testMethod, assertMethod");
         assertThat(methodQueryResult.<MethodDescriptor>getColumn("testMethod"))
-            .haveExactly(1, methodDescriptor(AssertExample.class, "assertjAssertExampleMethod"));
+                .haveExactly(1, methodDescriptor(AssertExample.class, "assertjAssertExampleMethod"));
         assertThat(methodQueryResult.<MethodDescriptor>getColumn("assertMethod"))
-            .haveExactly(1, methodDescriptor(Assertions.class, "assertThat", boolean.class));
+                .haveExactly(1, methodDescriptor(Assertions.class, "assertThat", boolean.class));
     }
 
 }

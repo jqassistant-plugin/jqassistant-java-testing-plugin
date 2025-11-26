@@ -34,11 +34,11 @@ public class CamundaIT extends AbstractJavaPluginIT {
 
         assertThat(conceptResult.getRows().size()).isEqualTo(1);
         assertThat(conceptResult.getRows()
-            .get(0)
-            .getColumns()
-            .get("assertMethod")
-            .getValue()).asInstanceOf(type(MethodDescriptor.class))
-            .is(methodDescriptor(BpmnAwareTests.class, "assertThat", ProcessDefinition.class));
+                .get(0)
+                .getColumns()
+                .get("assertMethod")
+                .getValue()).asInstanceOf(type(MethodDescriptor.class))
+                .is(methodDescriptor(BpmnAwareTests.class, "assertThat", ProcessDefinition.class));
 
         verifyResultGraph();
 
@@ -55,11 +55,11 @@ public class CamundaIT extends AbstractJavaPluginIT {
         store.beginTransaction();
 
         final List<TypeDescriptor> declaringTypes = conceptResult.getRows().stream()
-            .map(Row::getColumns)
-            .map(columns -> columns.get("DeclaringType"))
-            .map(Column::getValue)
-            .map(TypeDescriptor.class::cast)
-            .collect(Collectors.toList());
+                .map(Row::getColumns)
+                .map(columns -> columns.get("DeclaringType"))
+                .map(Column::getValue)
+                .map(TypeDescriptor.class::cast)
+                .collect(Collectors.toList());
         assertThat(declaringTypes).haveExactly(1, typeDescriptor(BpmnAwareTests.class));
 
         verifyResultGraph();
@@ -69,12 +69,12 @@ public class CamundaIT extends AbstractJavaPluginIT {
 
     private void verifyResultGraph() throws NoSuchMethodException {
         final TestResult methodQueryResult = query(
-            "MATCH (testMethod:Method)-[:INVOKES]->(assertMethod:Method) "
-                + "WHERE assertMethod:Camunda:Assert "
-                + "RETURN testMethod, assertMethod");
+                "MATCH (testMethod:Method)-[:INVOKES]->(assertMethod:Method) "
+                        + "WHERE assertMethod:Camunda:Assert "
+                        + "RETURN testMethod, assertMethod");
         assertThat(methodQueryResult.<MethodDescriptor>getColumn("testMethod"))
-            .haveExactly(1, methodDescriptor(AssertExample.class, "camundaBpmnAssertExampleMethod"));
+                .haveExactly(1, methodDescriptor(AssertExample.class, "camundaBpmnAssertExampleMethod"));
         assertThat(methodQueryResult.<MethodDescriptor>getColumn("assertMethod"))
-            .haveExactly(1, methodDescriptor(BpmnAwareTests.class, "assertThat", ProcessDefinition.class));
+                .haveExactly(1, methodDescriptor(BpmnAwareTests.class, "assertThat", ProcessDefinition.class));
     }
 }
