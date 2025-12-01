@@ -4,12 +4,14 @@ import org.assertj.core.api.Assertions;
 import org.camunda.bpm.engine.repository.ProcessDefinition;
 import org.camunda.bpm.engine.test.assertions.bpmn.BpmnAwareTests;
 import org.mockito.BDDMockito;
+import org.mockito.MockedStatic;
 import org.xmlunit.assertj.XmlAssert;
 import reactor.test.StepVerifier;
 
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.mockStatic;
 
 /**
  * Example class used by integration tests.
@@ -27,6 +29,14 @@ public class AssertExample {
 
     void mockitoVerifyExampleMethod() {
         verify(mock(Object.class).equals(any(Object.class)));
+    }
+
+    private static final String test = "testString";
+
+    void mockedStaticVerifyExampleMethod() {
+        try (MockedStatic<String> mocked = mockStatic(String.class)) {
+            mocked.verify(() -> test.equals("testString"));
+        }
     }
 
     void bddMockitoThenShouldExampleMethod() {
