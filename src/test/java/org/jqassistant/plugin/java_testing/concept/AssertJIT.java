@@ -31,9 +31,15 @@ class AssertJIT extends AbstractJavaPluginIT {
 
         store.beginTransaction();
 
-        assertThat(conceptResult.getRows().size()).isEqualTo(1);
+        assertThat(conceptResult.getRows().size()).isEqualTo(2);
         assertThat(conceptResult.getRows()
                 .get(0)
+                .getColumns()
+                .get("assertMethod")
+                .getValue()).asInstanceOf(type(MethodDescriptor.class))
+                .is(methodDescriptor(Assertions.class, "fail",  String.class));
+        assertThat(conceptResult.getRows()
+                .get(1)
                 .getColumns()
                 .get("assertMethod")
                 .getValue()).asInstanceOf(type(MethodDescriptor.class))
@@ -74,8 +80,12 @@ class AssertJIT extends AbstractJavaPluginIT {
                         + "RETURN testMethod, assertMethod");
         assertThat(methodQueryResult.<MethodDescriptor>getColumn("testMethod"))
                 .haveExactly(1, methodDescriptor(AssertExample.class, "assertjAssertExampleMethod"));
+        assertThat(methodQueryResult.<MethodDescriptor>getColumn("testMethod"))
+                .haveExactly(1, methodDescriptor(AssertExample.class, "assertjFailExampleMethod"));
         assertThat(methodQueryResult.<MethodDescriptor>getColumn("assertMethod"))
                 .haveExactly(1, methodDescriptor(Assertions.class, "assertThat", boolean.class));
+        assertThat(methodQueryResult.<MethodDescriptor>getColumn("assertMethod"))
+                .haveExactly(1, methodDescriptor(Assertions.class, "fail", String.class));
     }
 
 }
