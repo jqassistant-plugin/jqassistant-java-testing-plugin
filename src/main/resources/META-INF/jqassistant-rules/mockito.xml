@@ -11,12 +11,14 @@
             MATCH
                 (assertType:Java:Type)-[:DECLARES]->(assertMethod:Java:Method)
             WHERE
-                assertType.fqn = 'org.mockito.Mockito' and assertMethod.signature =~ '.* verify.*'
-                OR assertType.fqn = 'org.mockito.MockedStatic' and assertMethod.signature =~ '.* verify.*'
+                assertType.fqn in ['org.mockito.Mockito', 'org.mockito.MockedStatic']
+                and assertMethod.signature =~ '.* verify.*'
             SET
                 assertMethod:Mockito:Assert
             RETURN
                 assertMethod
+            ORDER BY
+               assertType.fqn, assertMethod.signature
         ]]></cypher>
     </concept>
 
@@ -36,6 +38,8 @@
                 assertMethod:Mockito:Assert
             RETURN
                 assertMethod
+            ORDER BY
+               type.fqn, assertMethod.signature
         ]]></cypher>
     </concept>
 

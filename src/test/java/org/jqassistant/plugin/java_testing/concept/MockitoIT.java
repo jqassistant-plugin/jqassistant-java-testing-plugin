@@ -39,14 +39,14 @@ class MockitoIT extends AbstractJavaPluginIT {
                 .getColumns()
                 .get("assertMethod")
                 .getValue()).asInstanceOf(type(MethodDescriptor.class))
-                .is(methodDescriptor(Mockito.class, "verify", Object.class));
+                .is(methodDescriptor(MockedStatic.class, "verify", MockedStatic.Verification.class));
 
         assertThat(conceptResult.getRows()
                 .get(1)
                 .getColumns()
                 .get("assertMethod")
                 .getValue()).asInstanceOf(type(MethodDescriptor.class))
-                .is(methodDescriptor(MockedStatic.class, "verify", MockedStatic.Verification.class));
+                .is(methodDescriptor(Mockito.class, "verify", Object.class));
 
         final TestResult methodQueryResultForMockito = getMethodQueryResultForMockito();
         assertThat(methodQueryResultForMockito.getRows().size()).isEqualTo(2);
