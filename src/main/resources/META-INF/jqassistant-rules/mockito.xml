@@ -17,6 +17,8 @@
                 assertMethod:Mockito:Assert
             RETURN
                 assertMethod
+            ORDER BY
+               assertType.fqn, assertMethod.signature
         ]]></cypher>
     </concept>
 
@@ -36,6 +38,8 @@
                 assertMethod:Mockito:Assert
             RETURN
                 assertMethod
+            ORDER BY
+               type.fqn, assertMethod.signature
         ]]></cypher>
     </concept>
 
