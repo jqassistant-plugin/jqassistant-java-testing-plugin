@@ -13,6 +13,7 @@ import com.buschmais.jqassistant.plugin.java.test.AbstractJavaPluginIT;
 
 import org.junit.jupiter.api.Test;
 import org.mockito.BDDMockito;
+import org.mockito.MockedStatic;
 import org.mockito.Mockito;
 
 import static com.buschmais.jqassistant.core.report.api.model.Result.Status.SUCCESS;
@@ -32,7 +33,7 @@ class MockitoIT extends AbstractJavaPluginIT {
 
         store.beginTransaction();
 
-        assertThat(conceptResult.getRows().size()).isEqualTo(1);
+        assertThat(conceptResult.getRows().size()).isEqualTo(2);
         assertThat(conceptResult.getRows()
                 .get(0)
                 .getColumns()
@@ -40,8 +41,15 @@ class MockitoIT extends AbstractJavaPluginIT {
                 .getValue()).asInstanceOf(type(MethodDescriptor.class))
                 .is(methodDescriptor(Mockito.class, "verify", Object.class));
 
+        assertThat(conceptResult.getRows()
+                .get(1)
+                .getColumns()
+                .get("assertMethod")
+                .getValue()).asInstanceOf(type(MethodDescriptor.class))
+                .is(methodDescriptor(MockedStatic.class, "verify", MockedStatic.Verification.class));
+
         final TestResult methodQueryResultForMockito = getMethodQueryResultForMockito();
-        assertThat(methodQueryResultForMockito.getRows().size()).isEqualTo(1);
+        assertThat(methodQueryResultForMockito.getRows().size()).isEqualTo(2);
         verifyMockitoVerifyExampleContained(methodQueryResultForMockito);
 
         store.commitTransaction();
@@ -89,7 +97,7 @@ class MockitoIT extends AbstractJavaPluginIT {
         assertThat(declaringTypes).haveExactly(1, typeDescriptor(Mockito.class));
 
         final TestResult methodQueryResultForMockito = getMethodQueryResultForMockito();
-        assertThat(methodQueryResultForMockito.getRows().size()).isEqualTo(2);
+        assertThat(methodQueryResultForMockito.getRows().size()).isEqualTo(3);
         verifyMockitoVerifyExampleContained(methodQueryResultForMockito);
         verifyBddMockitoThenShouldExampleContained(methodQueryResultForMockito);
         store.commitTransaction();
