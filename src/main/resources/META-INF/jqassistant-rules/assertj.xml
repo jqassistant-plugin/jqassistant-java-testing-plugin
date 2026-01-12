@@ -12,11 +12,16 @@
                 (assertType:Type)-[:DECLARES]->(assertMethod)
             WHERE
                 assertType.fqn =~ 'org\\.assertj\\.core\\.api\\..*Assertions.*'
-                AND assertMethod.signature =~ '.* assert.*'
+                AND (
+                    assertMethod.signature =~ '.* assert.*' OR
+                    assertMethod.signature =~ '.* fail.*'
+                )
             SET
                 assertMethod:AssertJ:Assert
             RETURN
                 assertMethod
+            ORDER BY
+                assertMethod.signature
         ]]></cypher>
     </concept>
 

@@ -20,6 +20,8 @@ public class AssertExample {
         Assertions.assertThat(true).isTrue();
     }
 
+    void assertjFailExampleMethod() { Assertions.fail("fail"); }
+
     void xmlAssertExampleMethod() {
         XmlAssert.assertThat("<nop/>").and("<nop />").normalizeWhitespace().areSimilar();
     }
