@@ -27,7 +27,7 @@ public class CamundaIT extends AbstractJavaPluginIT {
     void camundaAssertMethodTest() throws Exception {
         scanClasses(AssertExample.class);
 
-        final Result<Concept> conceptResult = applyConcept("camunda-bpmn:AssertMethod");
+        final Result<Concept> conceptResult = applyConcept("java-testing-camunda-bpmn:AssertMethod");
         assertThat(conceptResult.getStatus()).isEqualTo(SUCCESS);
 
         store.beginTransaction();

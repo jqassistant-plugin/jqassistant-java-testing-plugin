@@ -26,7 +26,7 @@ class AssertJIT extends AbstractJavaPluginIT {
     void assertjAssertMethod() throws Exception {
         scanClasses(AssertExample.class);
 
-        final Result<Concept> conceptResult = applyConcept("assertj:AssertMethod");
+        final Result<Concept> conceptResult = applyConcept("java-testing-assertj:AssertMethod");
         assertThat(conceptResult.getStatus()).isEqualTo(SUCCESS);
 
         store.beginTransaction();

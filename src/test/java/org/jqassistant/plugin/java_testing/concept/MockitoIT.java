@@ -28,7 +28,7 @@ class MockitoIT extends AbstractJavaPluginIT {
     void mockitoVerifyMethod() throws Exception {
         scanClasses(AssertExample.class);
 
-        final Result<Concept> conceptResult = applyConcept("mockito:VerifyMethod");
+        final Result<Concept> conceptResult = applyConcept("java-testing-mockito:VerifyMethod");
         assertThat(conceptResult.getStatus()).isEqualTo(SUCCESS);
 
         store.beginTransaction();
@@ -59,7 +59,7 @@ class MockitoIT extends AbstractJavaPluginIT {
     void bddMockitoThenShouldMethod() throws Exception {
         scanClasses(AssertExample.class);
 
-        final Result<Concept> conceptResult = applyConcept("mockito:BddThenShouldMethod");
+        final Result<Concept> conceptResult = applyConcept("java-testing-mockito:BddThenShouldMethod");
         assertThat(conceptResult.getStatus()).isEqualTo(SUCCESS);
 
         store.beginTransaction();

@@ -3,10 +3,20 @@
 This is the Java Testing Plugin for https://jqassistant.org[jQAssistant].
 For more information on jQAssistant see https://jqassistant.org[^].
 
+It provides concepts for several Java frameworks that provide testing APIs, e.g.
+
+* AssertJ
+* Camunda BPMN
+* Mockito
+* Project Reactor
+* XMLUnit
+
+The concepts identify assertion methods and provide to the concept `java:AssertMethod`.
+They are activated automatically if the latter concept is used, e.g. by a constraint.
+
 == Usage
 
-To be able to use the plug-in, it must be specified as a plug-in to jQAssistant.
-
+To be able to use the plugin, it must be declared in the jQAssistant configuration;
 
 [source,yaml]
 ..jqassistant.yml
@@ -15,5 +25,5 @@ jqassistant:
   plugins:
     - group-id: org.jqassistant.plugin
       artifact-id: jqassistant-java-testing-plugin
-      version: 1.0.0-SNAPSHOT
+      version: 1.0.0
 ----
