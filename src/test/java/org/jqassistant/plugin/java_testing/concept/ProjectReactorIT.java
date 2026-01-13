@@ -19,7 +19,7 @@ class ProjectReactorIT extends AbstractJavaPluginIT {
     void projectReactorAssertMethod() throws Exception {
         scanClasses(AssertExample.class);
 
-        final Result<Concept> conceptResult = applyConcept("projectreactor:AssertMethod");
+        final Result<Concept> conceptResult = applyConcept("java-testing-projectreactor:AssertMethod");
         assertThat(conceptResult.getStatus()).isEqualTo(SUCCESS);
 
         store.beginTransaction();

@@ -2,7 +2,7 @@
                    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
                    xsi:schemaLocation="http://schema.jqassistant.org/rule/v2.2 https://jqassistant.github.io/jqassistant/current/schema/jqassistant-rule-v2.2.xsd">
 
-    <concept id="projectreactor:AssertMethod">
+    <concept id="java-testing-projectreactor:AssertMethod">
         <providesConcept refId="java:AssertMethod"/>
         <description>
             Sets labels :Assert and :ProjectReactor for Project Reactor assert methods.
