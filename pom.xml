@@ -9,7 +9,7 @@
     </parent>
 
     <artifactId>jqassistant-java-testing-plugin</artifactId>
-    <version>1.0.0</version>
+    <version>1.1.0-SNAPSHOT</version>
 
     <name>jQAssistant Java Testing Plugin</name>
     <description>Plugin for jQAssistant providing rules for Java testing framework.</description>
@@ -40,7 +40,7 @@
         <developerConnection>scm:git:https://github.com/jqassistant-plugin/jqassistant-java-testing-plugin.git
         </developerConnection>
         <url>https://github.com/jqassistant-plugin/jqassistant-java-testing-plugin</url>
-        <tag>1.0.0</tag>
+        <tag>HEAD</tag>
     </scm>
 
     <properties>
