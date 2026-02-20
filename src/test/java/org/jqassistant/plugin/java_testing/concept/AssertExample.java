@@ -5,6 +5,7 @@ import org.camunda.bpm.engine.repository.ProcessDefinition;
 import org.camunda.bpm.engine.test.assertions.bpmn.BpmnAwareTests;
 import org.mockito.BDDMockito;
 import org.mockito.MockedStatic;
+import org.wildfly.common.Assert;
 import org.xmlunit.assertj.XmlAssert;
 import reactor.test.StepVerifier;
 
@@ -52,6 +53,10 @@ public class AssertExample {
 
     void projectReactorAssertExampleMethod() {
         StepVerifier.create(null).expectComplete().verify();
+    }
+
+    void wildflyAssertExampleMethod() {
+        Assert.assertTrue(true);
     }
 
 }
