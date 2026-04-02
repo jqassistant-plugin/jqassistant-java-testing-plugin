@@ -12,5 +12,6 @@
         <resource>camunda-bpmn.xml</resource>
         <resource>projectreactor.xml</resource>
         <resource>wildfly-assert.xml</resource>
+        <resource>spring-reactive.xml</resource>
     </rules>
 </jqassistant-plugin>
