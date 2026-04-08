@@ -5,6 +5,7 @@ import org.camunda.bpm.engine.repository.ProcessDefinition;
 import org.camunda.bpm.engine.test.assertions.bpmn.BpmnAwareTests;
 import org.mockito.BDDMockito;
 import org.mockito.MockedStatic;
+import org.springframework.test.web.reactive.server.WebTestClient;
 import org.wildfly.common.Assert;
 import org.xmlunit.assertj.XmlAssert;
 import reactor.test.StepVerifier;
@@ -57,6 +58,11 @@ public class AssertExample {
 
     void wildflyAssertExampleMethod() {
         Assert.assertTrue(true);
+    }
+
+    void springWebTestClientAssertExampleMethod() {
+        WebTestClient webTestClient = mock(WebTestClient.class);
+        webTestClient.get().exchange().expectStatus().isOk();
     }
 
 }
