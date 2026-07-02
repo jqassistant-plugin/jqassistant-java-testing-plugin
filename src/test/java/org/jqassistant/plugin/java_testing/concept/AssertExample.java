@@ -6,6 +6,10 @@ import org.camunda.bpm.engine.test.assertions.bpmn.BpmnAwareTests;
 import org.mockito.BDDMockito;
 import org.mockito.MockedStatic;
 import org.springframework.test.web.reactive.server.WebTestClient;
+import org.springframework.ws.test.server.MockWebServiceClient;
+import org.springframework.ws.test.server.RequestCreators;
+import org.springframework.ws.test.server.ResponseMatchers;
+import org.springframework.xml.transform.StringSource;
 import org.wildfly.common.Assert;
 import org.xmlunit.assertj.XmlAssert;
 import reactor.test.StepVerifier;
@@ -63,6 +67,12 @@ public class AssertExample {
     void springWebTestClientAssertExampleMethod() {
         WebTestClient webTestClient = mock(WebTestClient.class);
         webTestClient.get().exchange().expectStatus().isOk();
+    }
+
+    void springWebServiceAssertExampleMethod() {
+        MockWebServiceClient mockWebServiceClient = mock(MockWebServiceClient.class);
+        mockWebServiceClient.sendRequest(RequestCreators.withPayload(new StringSource("")))
+                .andExpect(ResponseMatchers.clientOrSenderFault());
     }
 
 }
