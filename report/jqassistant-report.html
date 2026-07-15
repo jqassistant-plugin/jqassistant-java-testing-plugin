@@ -192,7 +192,7 @@
             jQAssistant Report - jQAssistant Java Testing Plugin</h1>
         <h5>
                         Timestamp:
-            <span class="timeStamp">2026-07-06T12:30:35.72Z</span>
+            <span class="timeStamp">2026-07-15T11:39:00.534Z</span>
         </h5>
         <div>
             <h3>Constraints</h3>
@@ -746,7 +746,7 @@ with "Junit5", "Test" and "Template".</pre>
                                     <th>Artifact</th><th>PluginDescriptor</th>
                                 </tr>
                                 <tr>
-                                    <td>org.jqassistant.plugin:jqassistant-java-testing-plugin:jar:1.3.0-SNAPSHOT</td><td>/META-INF/jqassistant-plugin.xml</td>
+                                    <td>org.jqassistant.plugin:jqassistant-java-testing-plugin:jar:1.4.0-SNAPSHOT</td><td>/META-INF/jqassistant-plugin.xml</td>
                                 </tr>
                             </table>
                         </div>
@@ -759,7 +759,7 @@ with "Junit5", "Test" and "Template".</pre>
                             <span title="Matches Found">&#9728;&nbsp;</span><span title="Success (Result evaluation according to warn-on-severity/fail-on-severity thresholds)">&#10004;</span>
                         </div>
                         <div>info</div>
-                        <div>8</div>
+                        <div>7</div>
                         <div>
                             <span title="Labels all classes containing test methods with &quot;Test&quot; and &quot;Junit5&quot;." class="rule-name">junit5:TestClass</span>
                         </div>
@@ -772,28 +772,25 @@ with "Junit5", "Test" and "Template".</pre>
                                     <th>TestClass</th><th>TestMethods</th>
                                 </tr>
                                 <tr>
-                                    <td>org.jqassistant.plugin.java_testing.concept.XmlUnitAssertIT</td><td>void xmlAssertMethod(), void providedConceptAssertMethod()</td>
+                                    <td>org.jqassistant.plugin.java_testing.concept.CamundaIT</td><td>void camundaAssertMethodTest(), void providedConceptAssertMethod()</td>
                                 </tr>
                                 <tr>
-                                    <td>org.jqassistant.plugin.java_testing.concept.MockitoIT</td><td>void mockitoVerifyMethod(), void bddMockitoThenShouldMethod(), void providedConceptAssertMethod()</td>
+                                    <td>org.jqassistant.plugin.java_testing.concept.XmlUnitAssertIT</td><td>void providedConceptAssertMethod(), void xmlAssertMethod()</td>
+                                </tr>
+                                <tr>
+                                    <td>org.jqassistant.plugin.java_testing.concept.SpringReactiveWebTestClientIT</td><td>void providedConceptAssertMethod(), void springReactiveWebTestClientAssertMethod()</td>
                                 </tr>
                                 <tr>
                                     <td>org.jqassistant.plugin.java_testing.concept.AssertJIT</td><td>void providedConceptAssertMethod(), void assertjAssertMethod()</td>
                                 </tr>
                                 <tr>
-                                    <td>org.jqassistant.plugin.java_testing.concept.WildflyAssertIT</td><td>void wildflyAssertMethod(), void providedConceptAssertMethod()</td>
-                                </tr>
-                                <tr>
-                                    <td>org.jqassistant.plugin.java_testing.concept.CamundaIT</td><td>void providedConceptAssertMethod(), void camundaAssertMethodTest()</td>
-                                </tr>
-                                <tr>
                                     <td>org.jqassistant.plugin.java_testing.concept.ProjectReactorIT</td><td>void projectReactorAssertMethod()</td>
                                 </tr>
                                 <tr>
-                                    <td>org.jqassistant.plugin.java_testing.concept.SpringWebServiceIT</td><td>void springWebServiceAssertMethod(), void providedConceptAssertMethod()</td>
+                                    <td>org.jqassistant.plugin.java_testing.concept.MockitoIT</td><td>void providedConceptAssertMethod(), void mockitoVerifyMethod(), void bddMockitoThenShouldMethod()</td>
                                 </tr>
                                 <tr>
-                                    <td>org.jqassistant.plugin.java_testing.concept.SpringReactiveWebTestClientIT</td><td>void providedConceptAssertMethod(), void springReactiveWebTestClientAssertMethod()</td>
+                                    <td>org.jqassistant.plugin.java_testing.concept.WildflyAssertIT</td><td>void providedConceptAssertMethod(), void wildflyAssertMethod()</td>
                                 </tr>
                             </table>
                         </div>
@@ -823,7 +820,7 @@ with "Junit5", "Test" and "Template".</pre>
                             <span title="Matches Found">&#9728;&nbsp;</span><span title="Success (Result evaluation according to warn-on-severity/fail-on-severity thresholds)">&#10004;</span>
                         </div>
                         <div>info</div>
-                        <div>16</div>
+                        <div>14</div>
                         <div>
                             <span title="Finds all test methods (i.e. annotated with &quot;@org.junit.jupiter.api.Test&quot;) and
 labels them with &quot;Test&quot; and &quot;Junit5&quot;." class="rule-name">junit5:TestMethod</span>
@@ -838,22 +835,10 @@ labels them with "Test" and "Junit5".</pre>
                                     <th>Test</th>
                                 </tr>
                                 <tr>
-                                    <td>void springReactiveWebTestClientAssertMethod()</td>
-                                </tr>
-                                <tr>
                                     <td>void providedConceptAssertMethod()</td>
                                 </tr>
                                 <tr>
-                                    <td>void assertjAssertMethod()</td>
-                                </tr>
-                                <tr>
-                                    <td>void bddMockitoThenShouldMethod()</td>
-                                </tr>
-                                <tr>
-                                    <td>void wildflyAssertMethod()</td>
-                                </tr>
-                                <tr>
-                                    <td>void springWebServiceAssertMethod()</td>
+                                    <td>void providedConceptAssertMethod()</td>
                                 </tr>
                                 <tr>
                                     <td>void mockitoVerifyMethod()</td>
@@ -862,28 +847,34 @@ labels them with "Test" and "Junit5".</pre>
                                     <td>void providedConceptAssertMethod()</td>
                                 </tr>
                                 <tr>
+                                    <td>void springReactiveWebTestClientAssertMethod()</td>
+                                </tr>
+                                <tr>
+                                    <td>void providedConceptAssertMethod()</td>
+                                </tr>
+                                <tr>
+                                    <td>void bddMockitoThenShouldMethod()</td>
+                                </tr>
+                                <tr>
+                                    <td>void wildflyAssertMethod()</td>
+                                </tr>
+                                <tr>
                                     <td>void providedConceptAssertMethod()</td>
                                 </tr>
                                 <tr>
                                     <td>void camundaAssertMethodTest()</td>
                                 </tr>
                                 <tr>
-                                    <td>void providedConceptAssertMethod()</td>
-                                </tr>
-                                <tr>
-                                    <td>void providedConceptAssertMethod()</td>
-                                </tr>
-                                <tr>
-                                    <td>void xmlAssertMethod()</td>
-                                </tr>
-                                <tr>
-                                    <td>void providedConceptAssertMethod()</td>
-                                </tr>
-                                <tr>
                                     <td>void projectReactorAssertMethod()</td>
                                 </tr>
                                 <tr>
                                     <td>void providedConceptAssertMethod()</td>
+                                </tr>
+                                <tr>
+                                    <td>void assertjAssertMethod()</td>
+                                </tr>
+                                <tr>
+                                    <td>void xmlAssertMethod()</td>
                                 </tr>
                             </table>
                         </div>

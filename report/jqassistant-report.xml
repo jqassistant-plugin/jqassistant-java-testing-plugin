@@ -3,12 +3,12 @@
   <context>
     <build>
       <name>jQAssistant Java Testing Plugin</name>
-      <timestamp>2026-07-06T12:30:35.72Z</timestamp>
+      <timestamp>2026-07-15T11:39:00.534Z</timestamp>
       <properties></properties>
     </build>
   </context>
-  <group id="jqassistant-plugin:Default" date="2026-07-06T12:31:35">
-    <group id="jqassistant-plugin-maven:Default" date="2026-07-06T12:31:36">
+  <group id="jqassistant-plugin:Default" date="2026-07-15T11:39:58">
+    <group id="jqassistant-plugin-maven:Default" date="2026-07-15T11:39:58">
       <constraint id="jqassistant-plugin-maven:GroupId">
         <description>The groupId for jQAssistant plugin Maven projects must follow the pattern 'org.jqassistant.plugin.&lt;project&gt;'.</description>
         <verificationResult>
@@ -17,7 +17,7 @@
         </verificationResult>
         <status>success</status>
         <severity level="2">major</severity>
-        <duration>119</duration>
+        <duration>115</duration>
       </constraint>
       <concept id="jqassistant-plugin-maven:ParentProject" abstract="false">
         <description>Labels all Maven projects which declare "org.jqassistant.plugin:parent" as parent module with "Parent".</description>
@@ -41,7 +41,7 @@
         </verificationResult>
         <status>success</status>
         <severity level="4">info</severity>
-        <duration>136</duration>
+        <duration>151</duration>
       </concept>
       <constraint id="jqassistant-plugin-maven:MavenModulesMustUseParentGroupId">
         <description>All Maven projects must define the same groupId as the parent of the plugin project.</description>
@@ -51,7 +51,7 @@
         </verificationResult>
         <status>success</status>
         <severity level="2">major</severity>
-        <duration>98</duration>
+        <duration>88</duration>
         <required-concept id="jqassistant-plugin-maven:ParentProject">
           <status>success</status>
         </required-concept>
@@ -64,7 +64,7 @@
         </verificationResult>
         <status>success</status>
         <severity level="2">major</severity>
-        <duration>106</duration>
+        <duration>98</duration>
         <required-concept id="jqassistant-plugin-maven:ParentProject">
           <status>success</status>
         </required-concept>
@@ -77,7 +77,7 @@
         </verificationResult>
         <status>success</status>
         <severity level="2">major</severity>
-        <duration>108</duration>
+        <duration>122</duration>
         <required-concept id="jqassistant-plugin-maven:ParentProject">
           <status>success</status>
         </required-concept>
@@ -90,14 +90,14 @@
         </verificationResult>
         <status>success</status>
         <severity level="2">major</severity>
-        <duration>223</duration>
+        <duration>238</duration>
         <required-concept id="jqassistant-plugin-maven:ParentProject">
           <status>success</status>
         </required-concept>
       </constraint>
-      <duration>1024</duration>
+      <duration>1088</duration>
     </group>
-    <group id="jqassistant-plugin-test:Default" date="2026-07-06T12:31:37">
+    <group id="jqassistant-plugin-test:Default" date="2026-07-15T11:39:59">
       <concept id="junit5:ParameterizedTestMethod" abstract="false">
         <description>Finds all test methods (i.e. annotated with "@org.junit.jupiter.api.ParameterizedTest") and
 labels them with "Test", "Parameterized", and "Junit5".</description>
@@ -107,7 +107,7 @@ labels them with "Test", "Parameterized", and "Junit5".</description>
         </verificationResult>
         <status>success</status>
         <severity level="4">info</severity>
-        <duration>106</duration>
+        <duration>92</duration>
       </concept>
       <concept id="junit5:TestMethod" abstract="false">
         <description>Finds all test methods (i.e. annotated with "@org.junit.jupiter.api.Test") and
@@ -116,12 +116,48 @@ labels them with "Test" and "Junit5".</description>
           <columns count="1" primary="Test">
             <column>Test</column>
           </columns>
-          <rows count="16">
+          <rows count="14">
+            <row key="730f7c3a2d7f4b9677813e9dd3f95ff13bcd4b1f1d2b4c9634151a5d9bbad949">
+              <column name="Test">
+                <element language="Java">Method</element>
+                <source fileName="/org/jqassistant/plugin/java_testing/concept/AssertJIT.java" startLine="55" endLine="73">
+                  <parent fileName="/home/runner/.m2/repository/org/jqassistant/plugin/jqassistant-java-testing-plugin/1.4.0-SNAPSHOT/jqassistant-java-testing-plugin-1.4.0-SNAPSHOT-tests.test-jar" group="org.jqassistant.plugin" name="jqassistant-java-testing-plugin" type="test-jar" version="1.4.0-SNAPSHOT" classifier="tests"></parent>
+                </source>
+                <value>void providedConceptAssertMethod()</value>
+              </column>
+            </row>
+            <row key="730f7c3a2d7f4b9677813e9dd3f95ff13bcd4b1f1d2b4c9634151a5d9bbad949">
+              <column name="Test">
+                <element language="Java">Method</element>
+                <source fileName="/org/jqassistant/plugin/java_testing/concept/XmlUnitAssertIT.java" startLine="49" endLine="67">
+                  <parent fileName="/home/runner/.m2/repository/org/jqassistant/plugin/jqassistant-java-testing-plugin/1.4.0-SNAPSHOT/jqassistant-java-testing-plugin-1.4.0-SNAPSHOT-tests.test-jar" group="org.jqassistant.plugin" name="jqassistant-java-testing-plugin" type="test-jar" version="1.4.0-SNAPSHOT" classifier="tests"></parent>
+                </source>
+                <value>void providedConceptAssertMethod()</value>
+              </column>
+            </row>
+            <row key="937fc7c98299c300de5e64dbdf285aac3a154b1bcb53dea5670a7a4a18811bc7">
+              <column name="Test">
+                <element language="Java">Method</element>
+                <source fileName="/org/jqassistant/plugin/java_testing/concept/MockitoIT.java" startLine="29" endLine="56">
+                  <parent fileName="/home/runner/.m2/repository/org/jqassistant/plugin/jqassistant-java-testing-plugin/1.4.0-SNAPSHOT/jqassistant-java-testing-plugin-1.4.0-SNAPSHOT-tests.test-jar" group="org.jqassistant.plugin" name="jqassistant-java-testing-plugin" type="test-jar" version="1.4.0-SNAPSHOT" classifier="tests"></parent>
+                </source>
+                <value>void mockitoVerifyMethod()</value>
+              </column>
+            </row>
+            <row key="730f7c3a2d7f4b9677813e9dd3f95ff13bcd4b1f1d2b4c9634151a5d9bbad949">
+              <column name="Test">
+                <element language="Java">Method</element>
+                <source fileName="/org/jqassistant/plugin/java_testing/concept/SpringReactiveWebTestClientIT.java" startLine="49" endLine="67">
+                  <parent fileName="/home/runner/.m2/repository/org/jqassistant/plugin/jqassistant-java-testing-plugin/1.4.0-SNAPSHOT/jqassistant-java-testing-plugin-1.4.0-SNAPSHOT-tests.test-jar" group="org.jqassistant.plugin" name="jqassistant-java-testing-plugin" type="test-jar" version="1.4.0-SNAPSHOT" classifier="tests"></parent>
+                </source>
+                <value>void providedConceptAssertMethod()</value>
+              </column>
+            </row>
             <row key="947f451d72e72f4f3d9d6f62e1aaf0746b53df455e0cb722b3c9c6be26b388d9">
               <column name="Test">
                 <element language="Java">Method</element>
                 <source fileName="/org/jqassistant/plugin/java_testing/concept/SpringReactiveWebTestClientIT.java" startLine="27" endLine="45">
-                  <parent fileName="/home/runner/.m2/repository/org/jqassistant/plugin/jqassistant-java-testing-plugin/1.3.0-SNAPSHOT/jqassistant-java-testing-plugin-1.3.0-SNAPSHOT-tests.test-jar" group="org.jqassistant.plugin" name="jqassistant-java-testing-plugin" type="test-jar" version="1.3.0-SNAPSHOT" classifier="tests"></parent>
+                  <parent fileName="/home/runner/.m2/repository/org/jqassistant/plugin/jqassistant-java-testing-plugin/1.4.0-SNAPSHOT/jqassistant-java-testing-plugin-1.4.0-SNAPSHOT-tests.test-jar" group="org.jqassistant.plugin" name="jqassistant-java-testing-plugin" type="test-jar" version="1.4.0-SNAPSHOT" classifier="tests"></parent>
                 </source>
                 <value>void springReactiveWebTestClientAssertMethod()</value>
               </column>
@@ -129,26 +165,17 @@ labels them with "Test" and "Junit5".</description>
             <row key="730f7c3a2d7f4b9677813e9dd3f95ff13bcd4b1f1d2b4c9634151a5d9bbad949">
               <column name="Test">
                 <element language="Java">Method</element>
-                <source fileName="/org/jqassistant/plugin/java_testing/concept/SpringWebServiceIT.java" startLine="50" endLine="68">
-                  <parent fileName="/home/runner/.m2/repository/org/jqassistant/plugin/jqassistant-java-testing-plugin/1.3.0-SNAPSHOT/jqassistant-java-testing-plugin-1.3.0-SNAPSHOT-tests.test-jar" group="org.jqassistant.plugin" name="jqassistant-java-testing-plugin" type="test-jar" version="1.3.0-SNAPSHOT" classifier="tests"></parent>
+                <source fileName="/org/jqassistant/plugin/java_testing/concept/WildflyAssertIT.java" startLine="48" endLine="66">
+                  <parent fileName="/home/runner/.m2/repository/org/jqassistant/plugin/jqassistant-java-testing-plugin/1.4.0-SNAPSHOT/jqassistant-java-testing-plugin-1.4.0-SNAPSHOT-tests.test-jar" group="org.jqassistant.plugin" name="jqassistant-java-testing-plugin" type="test-jar" version="1.4.0-SNAPSHOT" classifier="tests"></parent>
                 </source>
                 <value>void providedConceptAssertMethod()</value>
-              </column>
-            </row>
-            <row key="70378972852ea26cfa4e5ef390937ba0582c27c8f37ac8a3a679723ac5e51caf">
-              <column name="Test">
-                <element language="Java">Method</element>
-                <source fileName="/org/jqassistant/plugin/java_testing/concept/AssertJIT.java" startLine="27" endLine="51">
-                  <parent fileName="/home/runner/.m2/repository/org/jqassistant/plugin/jqassistant-java-testing-plugin/1.3.0-SNAPSHOT/jqassistant-java-testing-plugin-1.3.0-SNAPSHOT-tests.test-jar" group="org.jqassistant.plugin" name="jqassistant-java-testing-plugin" type="test-jar" version="1.3.0-SNAPSHOT" classifier="tests"></parent>
-                </source>
-                <value>void assertjAssertMethod()</value>
               </column>
             </row>
             <row key="0d23966b2f7758990570d06170a30220ad2457e6cc22f9caf047872b698a8f4d">
               <column name="Test">
                 <element language="Java">Method</element>
                 <source fileName="/org/jqassistant/plugin/java_testing/concept/MockitoIT.java" startLine="60" endLine="80">
-                  <parent fileName="/home/runner/.m2/repository/org/jqassistant/plugin/jqassistant-java-testing-plugin/1.3.0-SNAPSHOT/jqassistant-java-testing-plugin-1.3.0-SNAPSHOT-tests.test-jar" group="org.jqassistant.plugin" name="jqassistant-java-testing-plugin" type="test-jar" version="1.3.0-SNAPSHOT" classifier="tests"></parent>
+                  <parent fileName="/home/runner/.m2/repository/org/jqassistant/plugin/jqassistant-java-testing-plugin/1.4.0-SNAPSHOT/jqassistant-java-testing-plugin-1.4.0-SNAPSHOT-tests.test-jar" group="org.jqassistant.plugin" name="jqassistant-java-testing-plugin" type="test-jar" version="1.4.0-SNAPSHOT" classifier="tests"></parent>
                 </source>
                 <value>void bddMockitoThenShouldMethod()</value>
               </column>
@@ -157,43 +184,16 @@ labels them with "Test" and "Junit5".</description>
               <column name="Test">
                 <element language="Java">Method</element>
                 <source fileName="/org/jqassistant/plugin/java_testing/concept/WildflyAssertIT.java" startLine="26" endLine="44">
-                  <parent fileName="/home/runner/.m2/repository/org/jqassistant/plugin/jqassistant-java-testing-plugin/1.3.0-SNAPSHOT/jqassistant-java-testing-plugin-1.3.0-SNAPSHOT-tests.test-jar" group="org.jqassistant.plugin" name="jqassistant-java-testing-plugin" type="test-jar" version="1.3.0-SNAPSHOT" classifier="tests"></parent>
+                  <parent fileName="/home/runner/.m2/repository/org/jqassistant/plugin/jqassistant-java-testing-plugin/1.4.0-SNAPSHOT/jqassistant-java-testing-plugin-1.4.0-SNAPSHOT-tests.test-jar" group="org.jqassistant.plugin" name="jqassistant-java-testing-plugin" type="test-jar" version="1.4.0-SNAPSHOT" classifier="tests"></parent>
                 </source>
                 <value>void wildflyAssertMethod()</value>
               </column>
             </row>
-            <row key="bdab391ebc76b13b70d07c862556f40b353ebb0cec8e788233bab0abfd5f12f5">
-              <column name="Test">
-                <element language="Java">Method</element>
-                <source fileName="/org/jqassistant/plugin/java_testing/concept/SpringWebServiceIT.java" startLine="28" endLine="46">
-                  <parent fileName="/home/runner/.m2/repository/org/jqassistant/plugin/jqassistant-java-testing-plugin/1.3.0-SNAPSHOT/jqassistant-java-testing-plugin-1.3.0-SNAPSHOT-tests.test-jar" group="org.jqassistant.plugin" name="jqassistant-java-testing-plugin" type="test-jar" version="1.3.0-SNAPSHOT" classifier="tests"></parent>
-                </source>
-                <value>void springWebServiceAssertMethod()</value>
-              </column>
-            </row>
-            <row key="937fc7c98299c300de5e64dbdf285aac3a154b1bcb53dea5670a7a4a18811bc7">
-              <column name="Test">
-                <element language="Java">Method</element>
-                <source fileName="/org/jqassistant/plugin/java_testing/concept/MockitoIT.java" startLine="29" endLine="56">
-                  <parent fileName="/home/runner/.m2/repository/org/jqassistant/plugin/jqassistant-java-testing-plugin/1.3.0-SNAPSHOT/jqassistant-java-testing-plugin-1.3.0-SNAPSHOT-tests.test-jar" group="org.jqassistant.plugin" name="jqassistant-java-testing-plugin" type="test-jar" version="1.3.0-SNAPSHOT" classifier="tests"></parent>
-                </source>
-                <value>void mockitoVerifyMethod()</value>
-              </column>
-            </row>
             <row key="730f7c3a2d7f4b9677813e9dd3f95ff13bcd4b1f1d2b4c9634151a5d9bbad949">
               <column name="Test">
                 <element language="Java">Method</element>
-                <source fileName="/org/jqassistant/plugin/java_testing/concept/XmlUnitAssertIT.java" startLine="49" endLine="67">
-                  <parent fileName="/home/runner/.m2/repository/org/jqassistant/plugin/jqassistant-java-testing-plugin/1.3.0-SNAPSHOT/jqassistant-java-testing-plugin-1.3.0-SNAPSHOT-tests.test-jar" group="org.jqassistant.plugin" name="jqassistant-java-testing-plugin" type="test-jar" version="1.3.0-SNAPSHOT" classifier="tests"></parent>
-                </source>
-                <value>void providedConceptAssertMethod()</value>
-              </column>
-            </row>
-            <row key="730f7c3a2d7f4b9677813e9dd3f95ff13bcd4b1f1d2b4c9634151a5d9bbad949">
-              <column name="Test">
-                <element language="Java">Method</element>
-                <source fileName="/org/jqassistant/plugin/java_testing/concept/WildflyAssertIT.java" startLine="48" endLine="66">
-                  <parent fileName="/home/runner/.m2/repository/org/jqassistant/plugin/jqassistant-java-testing-plugin/1.3.0-SNAPSHOT/jqassistant-java-testing-plugin-1.3.0-SNAPSHOT-tests.test-jar" group="org.jqassistant.plugin" name="jqassistant-java-testing-plugin" type="test-jar" version="1.3.0-SNAPSHOT" classifier="tests"></parent>
+                <source fileName="/org/jqassistant/plugin/java_testing/concept/MockitoIT.java" startLine="84" endLine="104">
+                  <parent fileName="/home/runner/.m2/repository/org/jqassistant/plugin/jqassistant-java-testing-plugin/1.4.0-SNAPSHOT/jqassistant-java-testing-plugin-1.4.0-SNAPSHOT-tests.test-jar" group="org.jqassistant.plugin" name="jqassistant-java-testing-plugin" type="test-jar" version="1.4.0-SNAPSHOT" classifier="tests"></parent>
                 </source>
                 <value>void providedConceptAssertMethod()</value>
               </column>
@@ -202,52 +202,16 @@ labels them with "Test" and "Junit5".</description>
               <column name="Test">
                 <element language="Java">Method</element>
                 <source fileName="/org/jqassistant/plugin/java_testing/concept/CamundaIT.java" startLine="28" endLine="46">
-                  <parent fileName="/home/runner/.m2/repository/org/jqassistant/plugin/jqassistant-java-testing-plugin/1.3.0-SNAPSHOT/jqassistant-java-testing-plugin-1.3.0-SNAPSHOT-tests.test-jar" group="org.jqassistant.plugin" name="jqassistant-java-testing-plugin" type="test-jar" version="1.3.0-SNAPSHOT" classifier="tests"></parent>
+                  <parent fileName="/home/runner/.m2/repository/org/jqassistant/plugin/jqassistant-java-testing-plugin/1.4.0-SNAPSHOT/jqassistant-java-testing-plugin-1.4.0-SNAPSHOT-tests.test-jar" group="org.jqassistant.plugin" name="jqassistant-java-testing-plugin" type="test-jar" version="1.4.0-SNAPSHOT" classifier="tests"></parent>
                 </source>
                 <value>void camundaAssertMethodTest()</value>
-              </column>
-            </row>
-            <row key="730f7c3a2d7f4b9677813e9dd3f95ff13bcd4b1f1d2b4c9634151a5d9bbad949">
-              <column name="Test">
-                <element language="Java">Method</element>
-                <source fileName="/org/jqassistant/plugin/java_testing/concept/SpringReactiveWebTestClientIT.java" startLine="49" endLine="67">
-                  <parent fileName="/home/runner/.m2/repository/org/jqassistant/plugin/jqassistant-java-testing-plugin/1.3.0-SNAPSHOT/jqassistant-java-testing-plugin-1.3.0-SNAPSHOT-tests.test-jar" group="org.jqassistant.plugin" name="jqassistant-java-testing-plugin" type="test-jar" version="1.3.0-SNAPSHOT" classifier="tests"></parent>
-                </source>
-                <value>void providedConceptAssertMethod()</value>
-              </column>
-            </row>
-            <row key="730f7c3a2d7f4b9677813e9dd3f95ff13bcd4b1f1d2b4c9634151a5d9bbad949">
-              <column name="Test">
-                <element language="Java">Method</element>
-                <source fileName="/org/jqassistant/plugin/java_testing/concept/CamundaIT.java" startLine="50" endLine="68">
-                  <parent fileName="/home/runner/.m2/repository/org/jqassistant/plugin/jqassistant-java-testing-plugin/1.3.0-SNAPSHOT/jqassistant-java-testing-plugin-1.3.0-SNAPSHOT-tests.test-jar" group="org.jqassistant.plugin" name="jqassistant-java-testing-plugin" type="test-jar" version="1.3.0-SNAPSHOT" classifier="tests"></parent>
-                </source>
-                <value>void providedConceptAssertMethod()</value>
-              </column>
-            </row>
-            <row key="9beba535ea6c13621f30a883a841c5f854b5d37e73e8479b62b38dca1af63a20">
-              <column name="Test">
-                <element language="Java">Method</element>
-                <source fileName="/org/jqassistant/plugin/java_testing/concept/XmlUnitAssertIT.java" startLine="27" endLine="45">
-                  <parent fileName="/home/runner/.m2/repository/org/jqassistant/plugin/jqassistant-java-testing-plugin/1.3.0-SNAPSHOT/jqassistant-java-testing-plugin-1.3.0-SNAPSHOT-tests.test-jar" group="org.jqassistant.plugin" name="jqassistant-java-testing-plugin" type="test-jar" version="1.3.0-SNAPSHOT" classifier="tests"></parent>
-                </source>
-                <value>void xmlAssertMethod()</value>
-              </column>
-            </row>
-            <row key="730f7c3a2d7f4b9677813e9dd3f95ff13bcd4b1f1d2b4c9634151a5d9bbad949">
-              <column name="Test">
-                <element language="Java">Method</element>
-                <source fileName="/org/jqassistant/plugin/java_testing/concept/MockitoIT.java" startLine="84" endLine="104">
-                  <parent fileName="/home/runner/.m2/repository/org/jqassistant/plugin/jqassistant-java-testing-plugin/1.3.0-SNAPSHOT/jqassistant-java-testing-plugin-1.3.0-SNAPSHOT-tests.test-jar" group="org.jqassistant.plugin" name="jqassistant-java-testing-plugin" type="test-jar" version="1.3.0-SNAPSHOT" classifier="tests"></parent>
-                </source>
-                <value>void providedConceptAssertMethod()</value>
               </column>
             </row>
             <row key="ab0e2aa4790f362353cc562093a7dda9c80d149e58763febaba5b26bb36aa08d">
               <column name="Test">
                 <element language="Java">Method</element>
                 <source fileName="/org/jqassistant/plugin/java_testing/concept/ProjectReactorIT.java" startLine="20" endLine="38">
-                  <parent fileName="/home/runner/.m2/repository/org/jqassistant/plugin/jqassistant-java-testing-plugin/1.3.0-SNAPSHOT/jqassistant-java-testing-plugin-1.3.0-SNAPSHOT-tests.test-jar" group="org.jqassistant.plugin" name="jqassistant-java-testing-plugin" type="test-jar" version="1.3.0-SNAPSHOT" classifier="tests"></parent>
+                  <parent fileName="/home/runner/.m2/repository/org/jqassistant/plugin/jqassistant-java-testing-plugin/1.4.0-SNAPSHOT/jqassistant-java-testing-plugin-1.4.0-SNAPSHOT-tests.test-jar" group="org.jqassistant.plugin" name="jqassistant-java-testing-plugin" type="test-jar" version="1.4.0-SNAPSHOT" classifier="tests"></parent>
                 </source>
                 <value>void projectReactorAssertMethod()</value>
               </column>
@@ -255,21 +219,39 @@ labels them with "Test" and "Junit5".</description>
             <row key="730f7c3a2d7f4b9677813e9dd3f95ff13bcd4b1f1d2b4c9634151a5d9bbad949">
               <column name="Test">
                 <element language="Java">Method</element>
-                <source fileName="/org/jqassistant/plugin/java_testing/concept/AssertJIT.java" startLine="55" endLine="73">
-                  <parent fileName="/home/runner/.m2/repository/org/jqassistant/plugin/jqassistant-java-testing-plugin/1.3.0-SNAPSHOT/jqassistant-java-testing-plugin-1.3.0-SNAPSHOT-tests.test-jar" group="org.jqassistant.plugin" name="jqassistant-java-testing-plugin" type="test-jar" version="1.3.0-SNAPSHOT" classifier="tests"></parent>
+                <source fileName="/org/jqassistant/plugin/java_testing/concept/CamundaIT.java" startLine="50" endLine="68">
+                  <parent fileName="/home/runner/.m2/repository/org/jqassistant/plugin/jqassistant-java-testing-plugin/1.4.0-SNAPSHOT/jqassistant-java-testing-plugin-1.4.0-SNAPSHOT-tests.test-jar" group="org.jqassistant.plugin" name="jqassistant-java-testing-plugin" type="test-jar" version="1.4.0-SNAPSHOT" classifier="tests"></parent>
                 </source>
                 <value>void providedConceptAssertMethod()</value>
+              </column>
+            </row>
+            <row key="70378972852ea26cfa4e5ef390937ba0582c27c8f37ac8a3a679723ac5e51caf">
+              <column name="Test">
+                <element language="Java">Method</element>
+                <source fileName="/org/jqassistant/plugin/java_testing/concept/AssertJIT.java" startLine="27" endLine="51">
+                  <parent fileName="/home/runner/.m2/repository/org/jqassistant/plugin/jqassistant-java-testing-plugin/1.4.0-SNAPSHOT/jqassistant-java-testing-plugin-1.4.0-SNAPSHOT-tests.test-jar" group="org.jqassistant.plugin" name="jqassistant-java-testing-plugin" type="test-jar" version="1.4.0-SNAPSHOT" classifier="tests"></parent>
+                </source>
+                <value>void assertjAssertMethod()</value>
+              </column>
+            </row>
+            <row key="9beba535ea6c13621f30a883a841c5f854b5d37e73e8479b62b38dca1af63a20">
+              <column name="Test">
+                <element language="Java">Method</element>
+                <source fileName="/org/jqassistant/plugin/java_testing/concept/XmlUnitAssertIT.java" startLine="27" endLine="45">
+                  <parent fileName="/home/runner/.m2/repository/org/jqassistant/plugin/jqassistant-java-testing-plugin/1.4.0-SNAPSHOT/jqassistant-java-testing-plugin-1.4.0-SNAPSHOT-tests.test-jar" group="org.jqassistant.plugin" name="jqassistant-java-testing-plugin" type="test-jar" version="1.4.0-SNAPSHOT" classifier="tests"></parent>
+                </source>
+                <value>void xmlAssertMethod()</value>
               </column>
             </row>
           </rows>
         </result>
         <verificationResult>
           <success>true</success>
-          <rowCount>16</rowCount>
+          <rowCount>14</rowCount>
         </verificationResult>
         <status>success</status>
         <severity level="4">info</severity>
-        <duration>121</duration>
+        <duration>90</duration>
       </concept>
       <concept id="junit5:TestTemplateMethod" abstract="false">
         <description>Labels all methods annotated by "@org.junit.jupiter.api.TestTemplate"
@@ -280,7 +262,7 @@ with "Junit5", "Test" and "Template".</description>
         </verificationResult>
         <status>success</status>
         <severity level="4">info</severity>
-        <duration>87</duration>
+        <duration>93</duration>
       </concept>
       <concept id="junit5:RepeatedTestMethod" abstract="false">
         <description>Finds all test methods (i.e. annotated with "@org.junit.jupiter.api.RepeatedTest") and
@@ -291,7 +273,7 @@ labels them with "Test", "Repeated", and "Junit5".</description>
         </verificationResult>
         <status>success</status>
         <severity level="4">info</severity>
-        <duration>54</duration>
+        <duration>64</duration>
       </concept>
       <concept id="junit5:TestClass" abstract="false">
         <description>Labels all classes containing test methods with "Test" and "Junit5".</description>
@@ -300,96 +282,36 @@ labels them with "Test", "Repeated", and "Junit5".</description>
             <column>TestClass</column>
             <column>TestMethods</column>
           </columns>
-          <rows count="8">
-            <row key="00b90cdf432e6d6e7a04e7d5ffed0cba63c403d94d34dc4171293df09b18a28b">
-              <column name="TestClass">
-                <element language="Java">Type</element>
-                <source fileName="/org/jqassistant/plugin/java_testing/concept/XmlUnitAssertIT.java">
-                  <parent fileName="/home/runner/.m2/repository/org/jqassistant/plugin/jqassistant-java-testing-plugin/1.3.0-SNAPSHOT/jqassistant-java-testing-plugin-1.3.0-SNAPSHOT-tests.test-jar" group="org.jqassistant.plugin" name="jqassistant-java-testing-plugin" type="test-jar" version="1.3.0-SNAPSHOT" classifier="tests"></parent>
-                </source>
-                <value>org.jqassistant.plugin.java_testing.concept.XmlUnitAssertIT</value>
-              </column>
-              <column name="TestMethods">
-                <value>void xmlAssertMethod(), void providedConceptAssertMethod()</value>
-              </column>
-            </row>
-            <row key="8d2766b68952edb54e72231e500fe7cc7d111ee389e7e4085aa490a3569eb369">
-              <column name="TestClass">
-                <element language="Java">Type</element>
-                <source fileName="/org/jqassistant/plugin/java_testing/concept/MockitoIT.java">
-                  <parent fileName="/home/runner/.m2/repository/org/jqassistant/plugin/jqassistant-java-testing-plugin/1.3.0-SNAPSHOT/jqassistant-java-testing-plugin-1.3.0-SNAPSHOT-tests.test-jar" group="org.jqassistant.plugin" name="jqassistant-java-testing-plugin" type="test-jar" version="1.3.0-SNAPSHOT" classifier="tests"></parent>
-                </source>
-                <value>org.jqassistant.plugin.java_testing.concept.MockitoIT</value>
-              </column>
-              <column name="TestMethods">
-                <value>void mockitoVerifyMethod(), void bddMockitoThenShouldMethod(), void providedConceptAssertMethod()</value>
-              </column>
-            </row>
-            <row key="69836f8ff2708eb93fc585445cc9cd35a3f677f25cdbb8cb69d5f2a97704ec8c">
-              <column name="TestClass">
-                <element language="Java">Type</element>
-                <source fileName="/org/jqassistant/plugin/java_testing/concept/AssertJIT.java">
-                  <parent fileName="/home/runner/.m2/repository/org/jqassistant/plugin/jqassistant-java-testing-plugin/1.3.0-SNAPSHOT/jqassistant-java-testing-plugin-1.3.0-SNAPSHOT-tests.test-jar" group="org.jqassistant.plugin" name="jqassistant-java-testing-plugin" type="test-jar" version="1.3.0-SNAPSHOT" classifier="tests"></parent>
-                </source>
-                <value>org.jqassistant.plugin.java_testing.concept.AssertJIT</value>
-              </column>
-              <column name="TestMethods">
-                <value>void providedConceptAssertMethod(), void assertjAssertMethod()</value>
-              </column>
-            </row>
-            <row key="83c106f3044e7937f79a5cb4c393b9b4cf005f985c84e440d8f51fd3e2f08fb1">
-              <column name="TestClass">
-                <element language="Java">Type</element>
-                <source fileName="/org/jqassistant/plugin/java_testing/concept/WildflyAssertIT.java">
-                  <parent fileName="/home/runner/.m2/repository/org/jqassistant/plugin/jqassistant-java-testing-plugin/1.3.0-SNAPSHOT/jqassistant-java-testing-plugin-1.3.0-SNAPSHOT-tests.test-jar" group="org.jqassistant.plugin" name="jqassistant-java-testing-plugin" type="test-jar" version="1.3.0-SNAPSHOT" classifier="tests"></parent>
-                </source>
-                <value>org.jqassistant.plugin.java_testing.concept.WildflyAssertIT</value>
-              </column>
-              <column name="TestMethods">
-                <value>void wildflyAssertMethod(), void providedConceptAssertMethod()</value>
-              </column>
-            </row>
-            <row key="77d967b737cd184ed310fd7a6bb9132f67109dff790df7942b8416b3ab9c12d1">
+          <rows count="7">
+            <row key="c657d729163f11ed9fd9d0d59c74c204900147863f421a2a9c24424d519690e9">
               <column name="TestClass">
                 <element language="Java">Type</element>
                 <source fileName="/org/jqassistant/plugin/java_testing/concept/CamundaIT.java">
-                  <parent fileName="/home/runner/.m2/repository/org/jqassistant/plugin/jqassistant-java-testing-plugin/1.3.0-SNAPSHOT/jqassistant-java-testing-plugin-1.3.0-SNAPSHOT-tests.test-jar" group="org.jqassistant.plugin" name="jqassistant-java-testing-plugin" type="test-jar" version="1.3.0-SNAPSHOT" classifier="tests"></parent>
+                  <parent fileName="/home/runner/.m2/repository/org/jqassistant/plugin/jqassistant-java-testing-plugin/1.4.0-SNAPSHOT/jqassistant-java-testing-plugin-1.4.0-SNAPSHOT-tests.test-jar" group="org.jqassistant.plugin" name="jqassistant-java-testing-plugin" type="test-jar" version="1.4.0-SNAPSHOT" classifier="tests"></parent>
                 </source>
                 <value>org.jqassistant.plugin.java_testing.concept.CamundaIT</value>
               </column>
               <column name="TestMethods">
-                <value>void providedConceptAssertMethod(), void camundaAssertMethodTest()</value>
+                <value>void camundaAssertMethodTest(), void providedConceptAssertMethod()</value>
               </column>
             </row>
-            <row key="57b66f3feb04eeb6be0912f65e4f154c02d9ac170692e4f10e9673aaa169bedd">
+            <row key="58cd01f9e309a140a2ee78f211e6ecc25bf252832cd4e3cb4eb734407a3f5c83">
               <column name="TestClass">
                 <element language="Java">Type</element>
-                <source fileName="/org/jqassistant/plugin/java_testing/concept/ProjectReactorIT.java">
-                  <parent fileName="/home/runner/.m2/repository/org/jqassistant/plugin/jqassistant-java-testing-plugin/1.3.0-SNAPSHOT/jqassistant-java-testing-plugin-1.3.0-SNAPSHOT-tests.test-jar" group="org.jqassistant.plugin" name="jqassistant-java-testing-plugin" type="test-jar" version="1.3.0-SNAPSHOT" classifier="tests"></parent>
+                <source fileName="/org/jqassistant/plugin/java_testing/concept/XmlUnitAssertIT.java">
+                  <parent fileName="/home/runner/.m2/repository/org/jqassistant/plugin/jqassistant-java-testing-plugin/1.4.0-SNAPSHOT/jqassistant-java-testing-plugin-1.4.0-SNAPSHOT-tests.test-jar" group="org.jqassistant.plugin" name="jqassistant-java-testing-plugin" type="test-jar" version="1.4.0-SNAPSHOT" classifier="tests"></parent>
                 </source>
-                <value>org.jqassistant.plugin.java_testing.concept.ProjectReactorIT</value>
+                <value>org.jqassistant.plugin.java_testing.concept.XmlUnitAssertIT</value>
               </column>
               <column name="TestMethods">
-                <value>void projectReactorAssertMethod()</value>
-              </column>
-            </row>
-            <row key="948c8141f5b35dd74848ee5e43daa6ea625e14da8c27049d6172262e8c9b1915">
-              <column name="TestClass">
-                <element language="Java">Type</element>
-                <source fileName="/org/jqassistant/plugin/java_testing/concept/SpringWebServiceIT.java">
-                  <parent fileName="/home/runner/.m2/repository/org/jqassistant/plugin/jqassistant-java-testing-plugin/1.3.0-SNAPSHOT/jqassistant-java-testing-plugin-1.3.0-SNAPSHOT-tests.test-jar" group="org.jqassistant.plugin" name="jqassistant-java-testing-plugin" type="test-jar" version="1.3.0-SNAPSHOT" classifier="tests"></parent>
-                </source>
-                <value>org.jqassistant.plugin.java_testing.concept.SpringWebServiceIT</value>
-              </column>
-              <column name="TestMethods">
-                <value>void springWebServiceAssertMethod(), void providedConceptAssertMethod()</value>
+                <value>void providedConceptAssertMethod(), void xmlAssertMethod()</value>
               </column>
             </row>
             <row key="6d9ca5a3f7544b0d02f8ebb314d17a8fb2a732c61a38cf5caf50cd787faee773">
               <column name="TestClass">
                 <element language="Java">Type</element>
                 <source fileName="/org/jqassistant/plugin/java_testing/concept/SpringReactiveWebTestClientIT.java">
-                  <parent fileName="/home/runner/.m2/repository/org/jqassistant/plugin/jqassistant-java-testing-plugin/1.3.0-SNAPSHOT/jqassistant-java-testing-plugin-1.3.0-SNAPSHOT-tests.test-jar" group="org.jqassistant.plugin" name="jqassistant-java-testing-plugin" type="test-jar" version="1.3.0-SNAPSHOT" classifier="tests"></parent>
+                  <parent fileName="/home/runner/.m2/repository/org/jqassistant/plugin/jqassistant-java-testing-plugin/1.4.0-SNAPSHOT/jqassistant-java-testing-plugin-1.4.0-SNAPSHOT-tests.test-jar" group="org.jqassistant.plugin" name="jqassistant-java-testing-plugin" type="test-jar" version="1.4.0-SNAPSHOT" classifier="tests"></parent>
                 </source>
                 <value>org.jqassistant.plugin.java_testing.concept.SpringReactiveWebTestClientIT</value>
               </column>
@@ -397,15 +319,63 @@ labels them with "Test", "Repeated", and "Junit5".</description>
                 <value>void providedConceptAssertMethod(), void springReactiveWebTestClientAssertMethod()</value>
               </column>
             </row>
+            <row key="69836f8ff2708eb93fc585445cc9cd35a3f677f25cdbb8cb69d5f2a97704ec8c">
+              <column name="TestClass">
+                <element language="Java">Type</element>
+                <source fileName="/org/jqassistant/plugin/java_testing/concept/AssertJIT.java">
+                  <parent fileName="/home/runner/.m2/repository/org/jqassistant/plugin/jqassistant-java-testing-plugin/1.4.0-SNAPSHOT/jqassistant-java-testing-plugin-1.4.0-SNAPSHOT-tests.test-jar" group="org.jqassistant.plugin" name="jqassistant-java-testing-plugin" type="test-jar" version="1.4.0-SNAPSHOT" classifier="tests"></parent>
+                </source>
+                <value>org.jqassistant.plugin.java_testing.concept.AssertJIT</value>
+              </column>
+              <column name="TestMethods">
+                <value>void providedConceptAssertMethod(), void assertjAssertMethod()</value>
+              </column>
+            </row>
+            <row key="57b66f3feb04eeb6be0912f65e4f154c02d9ac170692e4f10e9673aaa169bedd">
+              <column name="TestClass">
+                <element language="Java">Type</element>
+                <source fileName="/org/jqassistant/plugin/java_testing/concept/ProjectReactorIT.java">
+                  <parent fileName="/home/runner/.m2/repository/org/jqassistant/plugin/jqassistant-java-testing-plugin/1.4.0-SNAPSHOT/jqassistant-java-testing-plugin-1.4.0-SNAPSHOT-tests.test-jar" group="org.jqassistant.plugin" name="jqassistant-java-testing-plugin" type="test-jar" version="1.4.0-SNAPSHOT" classifier="tests"></parent>
+                </source>
+                <value>org.jqassistant.plugin.java_testing.concept.ProjectReactorIT</value>
+              </column>
+              <column name="TestMethods">
+                <value>void projectReactorAssertMethod()</value>
+              </column>
+            </row>
+            <row key="1ca02e2e195ca6e38f48b3a2d134456d6d806fb102032f3cea2204363642f3e5">
+              <column name="TestClass">
+                <element language="Java">Type</element>
+                <source fileName="/org/jqassistant/plugin/java_testing/concept/MockitoIT.java">
+                  <parent fileName="/home/runner/.m2/repository/org/jqassistant/plugin/jqassistant-java-testing-plugin/1.4.0-SNAPSHOT/jqassistant-java-testing-plugin-1.4.0-SNAPSHOT-tests.test-jar" group="org.jqassistant.plugin" name="jqassistant-java-testing-plugin" type="test-jar" version="1.4.0-SNAPSHOT" classifier="tests"></parent>
+                </source>
+                <value>org.jqassistant.plugin.java_testing.concept.MockitoIT</value>
+              </column>
+              <column name="TestMethods">
+                <value>void providedConceptAssertMethod(), void mockitoVerifyMethod(), void bddMockitoThenShouldMethod()</value>
+              </column>
+            </row>
+            <row key="3a0533a4ae6be9b60e8cbbfb621c7e2c5aa72c880fe2048fcc289b0947466c61">
+              <column name="TestClass">
+                <element language="Java">Type</element>
+                <source fileName="/org/jqassistant/plugin/java_testing/concept/WildflyAssertIT.java">
+                  <parent fileName="/home/runner/.m2/repository/org/jqassistant/plugin/jqassistant-java-testing-plugin/1.4.0-SNAPSHOT/jqassistant-java-testing-plugin-1.4.0-SNAPSHOT-tests.test-jar" group="org.jqassistant.plugin" name="jqassistant-java-testing-plugin" type="test-jar" version="1.4.0-SNAPSHOT" classifier="tests"></parent>
+                </source>
+                <value>org.jqassistant.plugin.java_testing.concept.WildflyAssertIT</value>
+              </column>
+              <column name="TestMethods">
+                <value>void providedConceptAssertMethod(), void wildflyAssertMethod()</value>
+              </column>
+            </row>
           </rows>
         </result>
         <verificationResult>
           <success>true</success>
-          <rowCount>8</rowCount>
+          <rowCount>7</rowCount>
         </verificationResult>
         <status>success</status>
         <severity level="4">info</severity>
-        <duration>91</duration>
+        <duration>110</duration>
         <required-concept id="junit5:ParameterizedTestMethod">
           <status>success</status>
         </required-concept>
@@ -427,7 +397,7 @@ labels them with "Test", "Repeated", and "Junit5".</description>
         </verificationResult>
         <status>success</status>
         <severity level="4">info</severity>
-        <duration>127</duration>
+        <duration>165</duration>
         <required-concept id="junit5:TestClass">
           <status>success</status>
         </required-concept>
@@ -440,14 +410,14 @@ labels them with "Test", "Repeated", and "Junit5".</description>
         </verificationResult>
         <status>success</status>
         <severity level="2">major</severity>
-        <duration>31</duration>
+        <duration>34</duration>
         <required-concept id="jqassistant-plugin-test:IT">
           <status>success</status>
         </required-concept>
       </constraint>
-      <duration>668</duration>
+      <duration>710</duration>
     </group>
-    <group id="jqassistant-plugin-plugin:Default" date="2026-07-06T12:31:37">
+    <group id="jqassistant-plugin-plugin:Default" date="2026-07-15T11:39:59">
       <concept id="neo4j:Procedure" abstract="false">
         <description>Labels all types annotated with "@org.neo4j.procedure.Procedure" with `Neo4j` and `Procedure`.</description>
         <verificationResult>
@@ -456,7 +426,7 @@ labels them with "Test", "Repeated", and "Junit5".</description>
         </verificationResult>
         <status>success</status>
         <severity level="4">info</severity>
-        <duration>53</duration>
+        <duration>59</duration>
       </concept>
       <concept id="jqassistant-plugin-plugin:PluginDescriptor" abstract="false">
         <description>Labels jQAssistant plugin descriptor files with `jQAssistant` and `PluginDescriptor`.</description>
@@ -466,16 +436,16 @@ labels them with "Test", "Repeated", and "Junit5".</description>
             <column>PluginDescriptor</column>
           </columns>
           <rows count="1">
-            <row key="ba30a8e30419182a82dba8b23b60f6156f2a8e5fb2ce2e42b5d27c39441993a6">
+            <row key="ec5239f7fd2adf5bf96091e5e0e868a73bb75479bab5e08148ed383504edb41b">
               <column name="Artifact">
                 <element language="Generic">ArtifactFile</element>
-                <source fileName="/home/runner/.m2/repository/org/jqassistant/plugin/jqassistant-java-testing-plugin/1.3.0-SNAPSHOT/jqassistant-java-testing-plugin-1.3.0-SNAPSHOT.jar"></source>
-                <value>org.jqassistant.plugin:jqassistant-java-testing-plugin:jar:1.3.0-SNAPSHOT</value>
+                <source fileName="/home/runner/.m2/repository/org/jqassistant/plugin/jqassistant-java-testing-plugin/1.4.0-SNAPSHOT/jqassistant-java-testing-plugin-1.4.0-SNAPSHOT.jar"></source>
+                <value>org.jqassistant.plugin:jqassistant-java-testing-plugin:jar:1.4.0-SNAPSHOT</value>
               </column>
               <column name="PluginDescriptor">
                 <element language="Generic">File</element>
                 <source fileName="/META-INF/jqassistant-plugin.xml">
-                  <parent fileName="/home/runner/.m2/repository/org/jqassistant/plugin/jqassistant-java-testing-plugin/1.3.0-SNAPSHOT/jqassistant-java-testing-plugin-1.3.0-SNAPSHOT.jar" group="org.jqassistant.plugin" name="jqassistant-java-testing-plugin" type="jar" version="1.3.0-SNAPSHOT"></parent>
+                  <parent fileName="/home/runner/.m2/repository/org/jqassistant/plugin/jqassistant-java-testing-plugin/1.4.0-SNAPSHOT/jqassistant-java-testing-plugin-1.4.0-SNAPSHOT.jar" group="org.jqassistant.plugin" name="jqassistant-java-testing-plugin" type="jar" version="1.4.0-SNAPSHOT"></parent>
                 </source>
                 <value>/META-INF/jqassistant-plugin.xml</value>
               </column>
@@ -488,7 +458,7 @@ labels them with "Test", "Repeated", and "Junit5".</description>
         </verificationResult>
         <status>success</status>
         <severity level="4">info</severity>
-        <duration>66</duration>
+        <duration>62</duration>
       </concept>
       <concept id="jqassistant-plugin-plugin:PluginRegistersProcedure" abstract="false">
         <description>Creates a `REGISTERS` relation between all procedure class elements of the jQAssistant plugin
@@ -499,7 +469,7 @@ labels them with "Test", "Repeated", and "Junit5".</description>
         </verificationResult>
         <status>success</status>
         <severity level="4">info</severity>
-        <duration>177</duration>
+        <duration>203</duration>
         <required-concept id="jqassistant-plugin-plugin:PluginDescriptor">
           <status>success</status>
         </required-concept>
@@ -512,7 +482,7 @@ labels them with "Test", "Repeated", and "Junit5".</description>
         </verificationResult>
         <status>success</status>
         <severity level="2">major</severity>
-        <duration>47</duration>
+        <duration>44</duration>
         <required-concept id="neo4j:Procedure">
           <status>success</status>
         </required-concept>
@@ -529,7 +499,7 @@ labels them with "Test", "Repeated", and "Junit5".</description>
         </verificationResult>
         <status>success</status>
         <severity level="4">info</severity>
-        <duration>47</duration>
+        <duration>48</duration>
       </concept>
       <concept id="jqassistant-plugin-plugin:PluginRegistersUserFunction" abstract="false">
         <description>Creates a `REGISTERS` relation between all function class elements of the jQAssistant plugin
@@ -540,7 +510,7 @@ labels them with "Test", "Repeated", and "Junit5".</description>
         </verificationResult>
         <status>success</status>
         <severity level="4">info</severity>
-        <duration>152</duration>
+        <duration>171</duration>
         <required-concept id="jqassistant-plugin-plugin:PluginDescriptor">
           <status>success</status>
         </required-concept>
@@ -553,7 +523,7 @@ labels them with "Test", "Repeated", and "Junit5".</description>
         </verificationResult>
         <status>success</status>
         <severity level="2">major</severity>
-        <duration>49</duration>
+        <duration>52</duration>
         <required-concept id="neo4j:UserFunction">
           <status>success</status>
         </required-concept>
@@ -569,14 +539,14 @@ labels them with "Test", "Repeated", and "Junit5".</description>
         </verificationResult>
         <status>success</status>
         <severity level="3">minor</severity>
-        <duration>144</duration>
+        <duration>176</duration>
         <required-concept id="jqassistant-plugin-plugin:PluginDescriptor">
           <status>success</status>
         </required-concept>
       </constraint>
-      <duration>788</duration>
+      <duration>883</duration>
     </group>
-    <group id="jqassistant-plugin-package:Default" date="2026-07-06T12:31:38">
+    <group id="jqassistant-plugin-package:Default" date="2026-07-15T11:40:00">
       <concept id="java:GeneratedLombokType" abstract="false">
         <description>Labels types generated by Lombok as 'Generated' (requires 'lombok.addLombokGeneratedAnnotation=true' in 'lombok.config').</description>
         <result>
@@ -597,7 +567,7 @@ labels them with "Test", "Repeated", and "Junit5".</description>
         </verificationResult>
         <status>warning</status>
         <severity level="3">minor</severity>
-        <duration>54</duration>
+        <duration>68</duration>
       </concept>
       <concept id="java:GeneratedType" abstract="false">
         <description>Reports the count of types labeled with `Generated`, grouped by containing artifact.</description>
@@ -607,7 +577,7 @@ labels them with "Test", "Repeated", and "Junit5".</description>
         </verificationResult>
         <status>success</status>
         <severity level="3">minor</severity>
-        <duration>0</duration>
+        <duration>1</duration>
         <providing-concept id="java:GeneratedLombokType">
           <status>failure</status>
         </providing-concept>
@@ -620,13 +590,13 @@ labels them with "Test", "Repeated", and "Junit5".</description>
         </verificationResult>
         <status>success</status>
         <severity level="2">major</severity>
-        <duration>96</duration>
+        <duration>116</duration>
         <required-concept id="java:GeneratedType">
           <status>success</status>
         </required-concept>
       </constraint>
-      <duration>171</duration>
+      <duration>210</duration>
     </group>
-    <duration>173</duration>
+    <duration>212</duration>
   </group>
 </jqassistant-report>
