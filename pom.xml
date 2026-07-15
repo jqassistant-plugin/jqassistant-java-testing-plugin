@@ -48,7 +48,6 @@
         <wildfly-common.version>2.0.1</wildfly-common.version>
         <projectreactor.version>3.8.6</projectreactor.version>
         <spring-boot-starter-test.version>4.1.0</spring-boot-starter-test.version>
-        <springframework-ws-test.version>5.0.2</springframework-ws-test.version>
     </properties>
 
 
@@ -127,12 +126,6 @@
                 <version>${spring-boot-starter-test.version}</version>
                 <scope>test</scope>
             </dependency>
-            <dependency>
-                <groupId>org.springframework.ws</groupId>
-                <artifactId>spring-ws-test</artifactId>
-                <version>${springframework-ws-test.version}</version>
-                <scope>test</scope>
-            </dependency>
         </dependencies>
     </dependencyManagement>
 
@@ -202,11 +195,6 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.ws</groupId>
-            <artifactId>spring-ws-test</artifactId>
             <scope>test</scope>
         </dependency>
     </dependencies>

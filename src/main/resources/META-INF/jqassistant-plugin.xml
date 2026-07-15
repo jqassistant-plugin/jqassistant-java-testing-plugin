@@ -13,6 +13,5 @@
         <resource>projectreactor.xml</resource>
         <resource>wildfly-assert.xml</resource>
         <resource>spring-reactive.xml</resource>
-        <resource>spring-ws.xml</resource>
     </rules>
 </jqassistant-plugin>
