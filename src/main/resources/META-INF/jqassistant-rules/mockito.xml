@@ -11,7 +11,7 @@
             MATCH
                 (assertType:Java:Type)-[:DECLARES]->(assertMethod:Java:Method)
             WHERE
-                assertType.fqn in ['org.mockito.Mockito', 'org.mockito.MockedStatic']
+                assertType.fqn in ['org.mockito.Mockito', 'org.mockito.MockedStatic', 'org.mockito.InOrder']
                 and assertMethod.signature =~ '.* verify.*'
             SET
                 assertMethod:Mockito:Assert

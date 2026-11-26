@@ -4,6 +4,7 @@ import org.assertj.core.api.Assertions;
 import org.camunda.bpm.engine.repository.ProcessDefinition;
 import org.camunda.bpm.engine.test.assertions.bpmn.BpmnAwareTests;
 import org.mockito.BDDMockito;
+import org.mockito.InOrder;
 import org.mockito.MockedStatic;
 import org.springframework.test.web.reactive.server.WebTestClient;
 import org.wildfly.common.Assert;
@@ -11,9 +12,7 @@ import org.xmlunit.assertj.XmlAssert;
 import reactor.test.StepVerifier;
 
 import static org.mockito.ArgumentMatchers.any;
-import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.verify;
-import static org.mockito.Mockito.mockStatic;
+import static org.mockito.Mockito.*;
 
 /**
  * Example class used by integration tests.
@@ -33,6 +32,14 @@ public class AssertExample {
 
     void mockitoVerifyExampleMethod() {
         verify(mock(Object.class).equals(any(Object.class)));
+    }
+
+    void mockitoInOrderVerifyExampleMethod() {
+        final Object mock1 = mock(Object.class);
+        final Object mock2 = mock(Object.class);
+        final InOrder inOrder = inOrder(mock1, mock2);
+        inOrder.verify(mock1).toString();
+        inOrder.verify(mock2).toString();
     }
 
     private static final String test = "testString";
